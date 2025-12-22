@@ -26,7 +26,7 @@ export default function Checkout() {
       clearCart();
       toast({
         title: "Order Placed Successfully!",
-        description: "Thank you for shopping with INTech. You will receive an email confirmation shortly.",
+        description: "Thank you for shopping with INTech. We will call you shortly to confirm your order.",
       });
       setLocation("/");
     }, 2000);
@@ -60,8 +60,8 @@ export default function Checkout() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" required className="bg-background border-white/10" />
+                <Label htmlFor="phone">Phone Number</Label>
+                <Input id="phone" type="tel" placeholder="+91 XXXXX XXXXX" required className="bg-background border-white/10" />
               </div>
 
               <div className="space-y-2">
@@ -82,28 +82,15 @@ export default function Checkout() {
 
               <div className="pt-6 border-t border-white/10">
                 <h2 className="text-xl font-bold text-white mb-4">Payment Method</h2>
-                <RadioGroup defaultValue="card" className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="relative">
-                    <RadioGroupItem value="card" id="card" className="peer sr-only" />
-                    <Label 
-                      htmlFor="card" 
-                      className="flex flex-col items-center justify-center p-4 rounded-xl border-2 border-white/10 peer-data-[state=checked]:border-primary peer-data-[state=checked]:bg-primary/5 hover:bg-white/5 cursor-pointer transition-all"
-                    >
-                      <CreditCard className="w-6 h-6 mb-2 text-primary" />
-                      <span className="font-semibold">Card Payment</span>
-                    </Label>
+                <div className="p-4 rounded-xl border-2 border-primary bg-primary/5">
+                  <div className="flex items-center gap-3">
+                    <Banknote className="w-6 h-6 text-green-500 flex-shrink-0" />
+                    <div>
+                      <p className="font-semibold text-white">Cash on Delivery</p>
+                      <p className="text-sm text-muted-foreground">Pay when your order is delivered</p>
+                    </div>
                   </div>
-                  <div className="relative">
-                    <RadioGroupItem value="cod" id="cod" className="peer sr-only" />
-                    <Label 
-                      htmlFor="cod" 
-                      className="flex flex-col items-center justify-center p-4 rounded-xl border-2 border-white/10 peer-data-[state=checked]:border-primary peer-data-[state=checked]:bg-primary/5 hover:bg-white/5 cursor-pointer transition-all"
-                    >
-                      <Banknote className="w-6 h-6 mb-2 text-green-500" />
-                      <span className="font-semibold">Cash on Delivery</span>
-                    </Label>
-                  </div>
-                </RadioGroup>
+                </div>
               </div>
             </form>
           </div>

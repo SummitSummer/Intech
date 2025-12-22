@@ -15,7 +15,7 @@ export function Navbar() {
   const cartCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   const navLinks = [
-    { name: "Home", href: "/" },
+    { name: "Home", href: "/", icon: null },
     { name: "Mobiles", href: "/catalog?category=Smartphones", icon: <Phone className="w-4 h-4" /> },
     { name: "Laptops", href: "/catalog?category=Laptops", icon: <Laptop className="w-4 h-4" /> },
     { name: "Audio", href: "/catalog?category=Audio", icon: <Headphones className="w-4 h-4" /> },
@@ -28,6 +28,11 @@ export function Navbar() {
       setLocation(`/catalog?search=${encodeURIComponent(searchQuery)}`);
       setIsSearchOpen(false);
     }
+  };
+
+  const handleNavClick = (href: string) => {
+    setLocation(href);
+    setIsMenuOpen(false);
   };
 
   return (
@@ -44,12 +49,14 @@ export function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <Link key={link.name} href={link.href}>
-                <div className={`flex items-center gap-2 text-sm font-medium transition-colors hover:text-primary cursor-pointer ${location === link.href ? 'text-primary' : 'text-muted-foreground'}`}>
-                  {link.icon}
-                  {link.name}
-                </div>
-              </Link>
+              <button
+                key={link.name}
+                onClick={() => handleNavClick(link.href)}
+                className={`flex items-center gap-2 text-sm font-medium transition-colors hover:text-primary cursor-pointer ${location === link.href ? 'text-primary' : 'text-muted-foreground'}`}
+              >
+                {link.icon}
+                {link.name}
+              </button>
             ))}
           </div>
 
@@ -123,15 +130,14 @@ export function Navbar() {
           >
             <div className="px-4 pt-2 pb-6 space-y-2">
               {navLinks.map((link) => (
-                <Link key={link.name} href={link.href}>
-                  <div 
-                    className="flex items-center gap-3 px-3 py-3 rounded-lg text-base font-medium text-muted-foreground hover:text-primary hover:bg-white/5 cursor-pointer"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {link.icon}
-                    {link.name}
-                  </div>
-                </Link>
+                <button
+                  key={link.name}
+                  onClick={() => handleNavClick(link.href)}
+                  className="w-full text-left flex items-center gap-3 px-3 py-3 rounded-lg text-base font-medium text-muted-foreground hover:text-primary hover:bg-white/5 cursor-pointer"
+                >
+                  {link.icon}
+                  {link.name}
+                </button>
               ))}
               <div className="pt-4 mt-4 border-t border-white/10">
                 <Link href="/auth">
