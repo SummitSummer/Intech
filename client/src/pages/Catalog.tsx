@@ -35,7 +35,6 @@ export default function Catalog() {
   const { data: products, isLoading } = useProducts(filters);
 
   const categories = ["Smartphones", "Laptops", "Audio", "Accessories"];
-  const brands = ["Apple", "Samsung", "Sony", "OnePlus", "Dell", "Asus"];
 
   const handleFilterChange = (key: string, value: string) => {
     setFilters(prev => ({ ...prev, [key]: value === "all" ? "" : value }));
@@ -92,21 +91,6 @@ export default function Catalog() {
                       className={`cursor-pointer px-3 py-2 rounded-lg text-sm transition-colors ${filters.category === cat ? 'bg-primary text-white' : 'text-muted-foreground hover:bg-white/5 hover:text-white'}`}
                     >
                       {cat}
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <h3 className="font-bold text-white mb-4">Brands</h3>
-                <div className="space-y-2">
-                   {brands.map(brand => (
-                    <div 
-                      key={brand}
-                      onClick={() => handleFilterChange("brand", filters.brand === brand ? "all" : brand)}
-                      className={`cursor-pointer px-3 py-2 rounded-lg text-sm transition-colors ${filters.brand === brand ? 'bg-primary text-white' : 'text-muted-foreground hover:bg-white/5 hover:text-white'}`}
-                    >
-                      {brand}
                     </div>
                   ))}
                 </div>
