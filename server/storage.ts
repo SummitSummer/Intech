@@ -1,6 +1,6 @@
 import { users, products, type User, type InsertUser, type Product, type InsertProduct } from "@shared/schema";
 import { db } from "./db";
-import { eq, ilike, or, desc, asc } from "drizzle-orm";
+import { eq, ilike, or, desc, asc, and } from "drizzle-orm";
 
 export interface IStorage {
   getUser(id: number): Promise<User | undefined>;

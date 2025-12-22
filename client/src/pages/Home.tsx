@@ -55,15 +55,6 @@ export default function Home() {
                   Shop Now <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="text-base px-8 py-6 rounded-full border-white/20 text-white hover:bg-white/10"
-                onClick={() => seed()}
-                disabled={isSeeding}
-              >
-                {isSeeding ? "Initializing..." : "Reset Demo Data"}
-              </Button>
             </div>
           </motion.div>
         </div>

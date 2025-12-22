@@ -26,7 +26,7 @@ export default function Checkout() {
       clearCart();
       toast({
         title: "Order Placed Successfully!",
-        description: "Thank you for shopping with Nexus. You will receive an email confirmation shortly.",
+        description: "Thank you for shopping with INTech. You will receive an email confirmation shortly.",
       });
       setLocation("/");
     }, 2000);

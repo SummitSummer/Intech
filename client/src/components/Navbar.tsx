@@ -37,7 +37,7 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex-shrink-0 cursor-pointer">
             <span className="font-display text-2xl font-bold bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
-              NEXUS
+              INTech
             </span>
           </Link>
 
