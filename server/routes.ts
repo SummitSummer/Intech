@@ -9,7 +9,8 @@ export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
-  setupAuth(app);
+  // setupAuth(app);
+
 
   app.get(api.products.list.path, async (req, res) => {
     const products = await storage.getProducts(req.query);
