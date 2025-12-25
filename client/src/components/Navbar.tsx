@@ -31,9 +31,10 @@ export function Navbar() {
   };
 
   const handleNavClick = (href: string) => {
-    setLocation(href);
-    setIsMenuOpen(false);
-  };
+  console.log("Клик по навигации, href:", href); // ← эту строку добавь
+  setLocation(href);
+  setIsMenuOpen(false);
+};
 
   return (
     <nav className="fixed w-full z-50 glass border-b border-white/10">
