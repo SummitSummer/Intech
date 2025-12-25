@@ -114,11 +114,11 @@ const finalTotal = cartTotal + tax + shipping;
 </div>>
 
 <div className="flex justify-between text-sm text-muted-foreground">
-          <span>Delivery</span>
-          <span className="text-green-500">
-            {shipping === 0 ? "Free" : `₹${shipping.toLocaleString("en-IN")}`}
-          </span>
-        </div>
+  <span>Delivery</span>
+  <span className="text-green-500">
+    {shipping === 0 ? "Free" : `₹${shipping.toLocaleString("en-IN")}`}
+  </span>
+</div>
               <Button 
                 type="submit" 
                 form="checkout-form"
