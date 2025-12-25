@@ -13,7 +13,7 @@ export default function Home() {
     { name: "Smartphones", image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=500&q=80" },
     { name: "Laptops", image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=500&q=80" },
     { name: "Audio", image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=80" },
-    { name: "Accessories", image: "https://images.unsplash.com/photo-1572569028738-411a29639581?auto=format&fit=crop&w=500&q=80" },
+    { name: "Accessories", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYHzDUzK3hdeLQ1uiIxXpq-YTuVX9XbIW8Rg&s" },
   ];
 
   return (
