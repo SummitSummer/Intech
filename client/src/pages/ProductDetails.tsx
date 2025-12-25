@@ -44,7 +44,7 @@ export default function ProductDetails() {
       id: product.id,
       name: product.name,
       price: product.price,
-      image: product.images[0],
+      image: product.images?.[0] ?? "",
       quantity: 1,
     });
 
@@ -59,7 +59,7 @@ export default function ProductDetails() {
       id: product.id,
       name: product.name,
       price: product.price,
-      image: product.images[0],
+      image: product.images?.[0] ?? "",
       quantity: 1,
     });
 
@@ -73,14 +73,14 @@ export default function ProductDetails() {
         <div className="space-y-4">
           <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-muted">
             <img
-              src={product.images[activeImage]}
+              src={product.images?.[activeImage] ?? ""}
               alt={product.name}
               className="w-full h-full object-cover"
             />
           </div>
 
           <div className="flex gap-3">
-            {product.images.map((img: string, index: number) => (
+            {product.images?.map((img: string, index: number) => (
               <button
                 key={index}
                 onClick={() => setActiveImage(index)}
@@ -108,10 +108,16 @@ export default function ProductDetails() {
             </span>
             <div className="flex items-center gap-1">
               <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-              <span className="font-medium">{product.rating.toFixed(1)}</span>
-              <span className="text-xs text-muted-foreground">
-                ({product.reviews} reviews)
+              <span className="font-medium">
+                {typeof product.rating === "number"
+                  ? product.rating.toFixed(1)
+                  : product.rating}
               </span>
+              {product.reviews && (
+                <span className="text-xs text-muted-foreground">
+                  ({product.reviews} reviews)
+                </span>
+              )}
             </div>
           </div>
 
@@ -199,47 +205,57 @@ export default function ProductDetails() {
           </div>
 
           {/* Specs */}
-          <div className="mt-6 border-t border-white/10 pt-6 space-y-4 text-sm">
-            <h2 className="font-semibold text-white">Specifications</h2>
-            <div className="grid grid-cols-2 gap-4 text-muted-foreground">
-              <div>
-                <div className="text-xs uppercase text-white/60 mb-1">
-                  Chip
-                </div>
-                <div className="text-sm text-white flex items-center gap-1">
-                  <Check className="w-4 h-4 text-primary" />
-                  {product.specs.chip}
-                </div>
-              </div>
-              <div>
-                <div className="text-xs uppercase text-white/60 mb-1">
-                  Screen
-                </div>
-                <div className="text-sm text-white flex items-center gap-1">
-                  <Check className="w-4 h-4 text-primary" />
-                  {product.specs.screen}
-                </div>
-              </div>
-              <div>
-                <div className="text-xs uppercase text-white/60 mb-1">
-                  Storage
-                </div>
-                <div className="text-sm text-white flex items-center gap-1">
-                  <Check className="w-4 h-4 text-primary" />
-                  {product.specs.storage}
-                </div>
-              </div>
-              <div>
-                <div className="text-xs uppercase text-white/60 mb-1">
-                  Battery
-                </div>
-                <div className="text-sm text-white flex items-center gap-1">
-                  <Check className="w-4 h-4 text-primary" />
-                  {product.specs.battery}
-                </div>
+          {product.specs && (
+            <div className="mt-6 border-t border-white/10 pt-6 space-y-4 text-sm">
+              <h2 className="font-semibold text-white">Specifications</h2>
+              <div className="grid grid-cols-2 gap-4 text-muted-foreground">
+                {product.specs.chip && (
+                  <div>
+                    <div className="text-xs uppercase text-white/60 mb-1">
+                      Chip
+                    </div>
+                    <div className="text-sm text-white flex items-center gap-1">
+                      <Check className="w-4 h-4 text-primary" />
+                      {product.specs.chip}
+                    </div>
+                  </div>
+                )}
+                {product.specs.screen && (
+                  <div>
+                    <div className="text-xs uppercase text-white/60 mb-1">
+                      Screen
+                    </div>
+                    <div className="text-sm text-white flex items-center gap-1">
+                      <Check className="w-4 h-4 text-primary" />
+                      {product.specs.screen}
+                    </div>
+                  </div>
+                )}
+                {product.specs.storage && (
+                  <div>
+                    <div className="text-xs uppercase text-white/60 mb-1">
+                      Storage
+                    </div>
+                    <div className="text-sm text-white flex items-center gap-1">
+                      <Check className="w-4 h-4 text-primary" />
+                      {product.specs.storage}
+                    </div>
+                  </div>
+                )}
+                {product.specs.battery && (
+                  <div>
+                    <div className="text-xs uppercase text-white/60 mb-1">
+                      Battery
+                    </div>
+                    <div className="text-sm text-white flex items-center gap-1">
+                      <Check className="w-4 h-4 text-primary" />
+                      {product.specs.battery}
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </div>
