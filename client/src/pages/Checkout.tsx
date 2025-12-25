@@ -15,7 +15,7 @@ export default function Checkout() {
   const [isProcessing, setIsProcessing] = useState(false);
 
   const cartTotal = total();
-  const shipping = 350; // всегда платная доставка
+  const shipping = cartTotal > 5000 ? 0 : 350;          // ← условие доставки
   const tax = Math.floor(cartTotal * 0.18);
   const finalTotal = cartTotal + shipping + tax;
 
@@ -54,7 +54,11 @@ export default function Checkout() {
               <h2 className="font-semibold text-white mb-4">
                 Contact Information
               </h2>
-              <form id="checkout-form" onSubmit={handleSubmit} className="space-y-6">
+              <form
+                id="checkout-form"
+                onSubmit={handleSubmit}
+                className="space-y-6"
+              >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="firstName">First Name</Label>
@@ -87,7 +91,10 @@ export default function Checkout() {
 
                 <div className="space-y-2">
                   <Label>Payment Method</Label>
-                  <RadioGroup defaultValue="card" className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  <RadioGroup
+                    defaultValue="card"
+                    className="grid grid-cols-1 md:grid-cols-2 gap-3"
+                  >
                     <Label
                       htmlFor="card"
                       className="flex items-center gap-3 border border-white/10 rounded-lg p-3 cursor-pointer hover:border-primary"
@@ -157,7 +164,9 @@ export default function Checkout() {
                 <div className="flex justify-between text-sm text-muted-foreground">
                   <span>Delivery</span>
                   <span className="text-green-500">
-                    ₹{shipping.toLocaleString("en-IN")}
+                    {shipping === 0
+                      ? "Free"
+                      : `₹${shipping.toLocaleString("en-IN")}`}
                   </span>
                 </div>
               </div>
