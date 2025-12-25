@@ -1,5 +1,3 @@
-// client/src/pages/Home.tsx
-
 import { useProducts, useSeedProducts } from "@/hooks/use-products";
 import { ProductCard } from "@/components/ProductCard";
 import { Button } from "@/components/ui/button";
@@ -14,7 +12,7 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 
-function Home() {
+export default function Home() {
   const { data: products, isLoading } = useProducts({ sort: "popular" });
   const { mutate: seed, isPending: isSeeding } = useSeedProducts();
 
@@ -69,7 +67,7 @@ function Home() {
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-neutral-900 bg-gradient-to-b from-neutral-950 via-black to-black">
         <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 pb-16 pt-10 lg:flex-row lg:items-center lg:pb-24 lg:pt-16">
-          {/* Text */}
+          {/* Left text */}
           <div className="flex-1 space-y-6">
             <motion.h1
               className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl"
@@ -85,7 +83,7 @@ function Home() {
               transition={{ delay: 0.1 }}
             >
               Best prices on smartphones, laptops, and premium audio gear in
-              India. Curated selection, ultra‑fast delivery, and secure
+              India. Curated selection, ultra-fast delivery, and secure
               checkout.
             </motion.p>
 
@@ -134,7 +132,7 @@ function Home() {
             </motion.div>
           </div>
 
-          {/* Right side / categories */}
+          {/* Right / categories */}
           <motion.div
             className="flex-1"
             initial={{ opacity: 0, x: 60 }}
@@ -197,9 +195,9 @@ function Home() {
         <div className="mx-auto max-w-6xl px-4 py-10">
           <div className="mb-6 flex items-center justify-between gap-4">
             <div>
-              <h2 className="text-lg font-semibold">Top picks for you</h2>
+              <h2 className="text-lg font-semibold">Find exactly what you're looking for</h2>
               <p className="text-sm text-neutral-400">
-                Most popular devices among our customers.
+                Top selling products selected for you.
               </p>
             </div>
             <Button asChild variant="outline" size="sm">
@@ -360,5 +358,3 @@ function Home() {
     </div>
   );
 }
-
-export default Home;
