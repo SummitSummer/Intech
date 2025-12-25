@@ -155,51 +155,128 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-card border-t border-white/10 pt-16 pb-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-            <div>
-              <span className="font-display text-2xl font-bold text-white block mb-6">INTech</span>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                Your premier destination for high-end electronics and gadgets. Bringing the future of technology to your doorstep.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-bold text-white mb-6">Shop</h4>
-              <ul className="space-y-4 text-sm text-muted-foreground">
-                <li className="hover:text-primary cursor-pointer">Smartphones</li>
-                <li className="hover:text-primary cursor-pointer">Laptops</li>
-                <li className="hover:text-primary cursor-pointer">Audio</li>
-                <li className="hover:text-primary cursor-pointer">Accessories</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold text-white mb-6">Support</h4>
-              <ul className="space-y-4 text-sm text-muted-foreground">
-                <li className="hover:text-primary cursor-pointer">Contact Us</li>
-                <li className="hover:text-primary cursor-pointer">FAQs</li>
-                <li className="hover:text-primary cursor-pointer">Shipping & Returns</li>
-                <li className="hover:text-primary cursor-pointer">Warranty Policy</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold text-white mb-6">Newsletter</h4>
-              <p className="text-sm text-muted-foreground mb-4">Subscribe for latest updates and offers.</p>
-              <div className="flex gap-2">
-                <input 
-                  type="email" 
-                  placeholder="Enter your email" 
-                  className="bg-black/20 border border-white/10 rounded-lg px-4 py-2 text-sm w-full focus:outline-none focus:border-primary text-white"
-                />
-                <Button className="shrink-0">Subscribe</Button>
-              </div>
-            </div>
-          </div>
-          <div className="border-t border-white/5 pt-8 text-center text-sm text-muted-foreground">
-            <p>&copy; 2024 INTech. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+    В твоём Home-1.tsx нужно тронуть только подвал и заменить там <a> на Link с относительными путями.
+​
+
+Ниже готовый кусок футера, который можешь просто вставить вместо своего текущего <footer> в Home-1.tsx:
+
+tsx
+<footer className="bg-[#05070D] border-t border-[#1A1F2E] mt-20">
+  <div className="max-w-6xl mx-auto px-4 py-10 sm:px-6 lg:px-8">
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+      {/* Brand */}
+      <div>
+        <h3 className="text-lg font-semibold tracking-[0.25em]">INTECH</h3>
+        <p className="mt-3 text-sm text-neutral-400 max-w-xs">
+          Your premier destination for high-end electronics and gadgets.
+          Bringing the future of technology to your doorstep.
+        </p>
+      </div>
+
+      {/* Shop */}
+      <div>
+        <h4 className="text-sm font-semibold text-neutral-200">Shop</h4>
+        <ul className="mt-3 space-y-2 text-sm text-neutral-400">
+          <li>
+            <Link
+              href="/catalog?category=Smartphones"
+              className="hover:text-white transition"
+            >
+              Smartphones
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/catalog?category=Laptops"
+              className="hover:text-white transition"
+            >
+              Laptops
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/catalog?category=Audio"
+              className="hover:text-white transition"
+            >
+              Audio
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/catalog?category=Accessories"
+              className="hover:text-white transition"
+            >
+              Accessories
+            </Link>
+          </li>
+        </ul>
+      </div>
+
+      {/* Support */}
+      <div>
+        <h4 className="text-sm font-semibold text-neutral-200">Support</h4>
+        <ul className="mt-3 space-y-2 text-sm text-neutral-400">
+          <li>
+            <Link href="/support/contact" className="hover:text-white transition">
+              Contact Us
+            </Link>
+          </li>
+          <li>
+            <Link href="/support/faqs" className="hover:text-white transition">
+              FAQs
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/support/shipping-returns"
+              className="hover:text-white transition"
+            >
+              Shipping &amp; Returns
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/support/warranty"
+              className="hover:text-white transition"
+            >
+              Warranty Policy
+            </Link>
+          </li>
+        </ul>
+      </div>
+
+      {/* Newsletter */}
+      <div>
+        <h4 className="text-sm font-semibold text-neutral-200">Newsletter</h4>
+        <p className="mt-3 text-sm text-neutral-400">
+          Subscribe for latest updates and offers.
+        </p>
+        <form className="mt-4 flex gap-2">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            className="flex-1 rounded-md bg-neutral-900 border border-neutral-700 px-3 py-2 text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <Button type="submit" className="bg-blue-600 hover:bg-blue-500">
+            Subscribe
+          </Button>
+        </form>
+      </div>
+    </div>
+
+    <div className="mt-10 border-t border-neutral-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
+      <p>© 2024 Intech Electronics. All rights reserved.</p>
+      <div className="flex gap-4">
+        <Link href="/privacy" className="hover:text-white transition">
+          Privacy Policy
+        </Link>
+        <Link href="/terms" className="hover:text-white transition">
+          Terms of Service
+        </Link>
+      </div>
+    </div>
+  </div>
+</footer>
     </div>
   );
 }
