@@ -159,7 +159,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
             <div>
-              <span className="font-display text-2xl font-bold text-white block mb-6">NEXUS</span>
+              <span className="font-display text-2xl font-bold text-white block mb-6">INTech</span>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 Your premier destination for high-end electronics and gadgets. Bringing the future of technology to your doorstep.
               </p>
@@ -196,7 +196,7 @@ export default function Home() {
             </div>
           </div>
           <div className="border-t border-white/5 pt-8 text-center text-sm text-muted-foreground">
-            <p>&copy; 2024 Nexus Electronics. All rights reserved.</p>
+            <p>&copy; 2024 INTech. All rights reserved.</p>
           </div>
         </div>
       </footer>
