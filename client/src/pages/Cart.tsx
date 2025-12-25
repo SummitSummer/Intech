@@ -6,11 +6,11 @@ import { Minus, Plus, Trash2, ArrowRight } from "lucide-react";
 export default function Cart() {
   const { items, updateQuantity, removeItem, total } = useCart();
   const cartTotal = total();
-
   const shipping = cartTotal > 5000 ? 0 : 350;
   const tax = Math.floor(cartTotal * 0.18);
   const grandTotal = cartTotal + shipping + tax;
-
+  const shipping = cartTotal > 5000 ? 0 : 350;
+  const grandTotal = cartTotal + shipping;
   if (items.length === 0) {
     return (
       <div className="min-h-screen pt-24 flex flex-col items-center justify-center p-4">
