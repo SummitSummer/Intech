@@ -6,11 +6,11 @@ import { Minus, Plus, Trash2, ArrowRight } from "lucide-react";
 export default function Cart() {
   const { items, updateQuantity, removeItem, total } = useCart();
   const cartTotal = total();
+
   const shipping = cartTotal > 5000 ? 0 : 350;
   const tax = Math.floor(cartTotal * 0.18);
   const grandTotal = cartTotal + shipping + tax;
-  const shipping = cartTotal > 5000 ? 0 : 350;
-  const grandTotal = cartTotal + shipping;
+
   if (items.length === 0) {
     return (
       <div className="min-h-screen pt-24 flex flex-col items-center justify-center p-4">
@@ -102,12 +102,13 @@ export default function Cart() {
               
               <div className="border-t border-white/10 pt-4 mb-8">
                 <div className="flex justify-between items-end">
-                  <span className="text-lg font-bold text-white">Total</span>
-                  <span className="text-2xl font-bold text-primary">
-                    ₹{grandTotal.toLocaleString("en-IN")}
+                  <span className="text-lg font-bold text-white">
                   </span>
-                </div>
+                    <span className="text-2xl font-bold text-primary">
+                  ₹{grandTotal.toLocaleString("en-IN")}
+                </span>
               </div>
+            </div>
 
               <Link href="/checkout">
                 <Button className="w-full h-12 text-base font-bold bg-primary hover:bg-primary/90 text-white">
