@@ -108,4 +108,140 @@ export default function ProductDetails() {
             </span>
             <div className="flex items-center gap-1">
               <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-              <span className="font-medium">{product.rating
+              <span className="font-medium">{product.rating.toFixed(1)}</span>
+              <span className="text-xs text-muted-foreground">
+                ({product.reviews} reviews)
+              </span>
+            </div>
+          </div>
+
+          <h1 className="text-3xl md:text-4xl font-display font-bold">
+            {product.name}
+          </h1>
+
+          <p className="text-muted-foreground max-w-xl">
+            {product.description}
+          </p>
+
+          {/* Price & Actions */}
+          <div className="space-y-4">
+            <div className="flex items-baseline gap-3">
+              <span className="text-3xl font-bold text-primary">
+                ₹{product.price.toLocaleString("en-IN")}
+              </span>
+              {product.oldPrice && (
+                <span className="text-muted-foreground line-through">
+                  ₹{product.oldPrice.toLocaleString("en-IN")}
+                </span>
+              )}
+              {product.discount && (
+                <span className="text-sm text-green-400 font-medium">
+                  {product.discount}% OFF
+                </span>
+              )}
+            </div>
+
+            <div className="flex gap-4 mt-4">
+              <Button
+                className="flex-1 bg-primary hover:bg-primary/90"
+                onClick={handleAddToCart}
+              >
+                <ShoppingCart className="w-4 h-4 mr-2" />
+                Add to Cart
+              </Button>
+
+              <Button
+                className="flex-1 bg-white text-black hover:bg-white/90"
+                onClick={handleBuyNow}
+              >
+                Buy Now
+              </Button>
+            </div>
+          </div>
+
+          {/* Badges */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-4 text-xs">
+            <div className="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2">
+              <Truck className="w-4 h-4 text-primary" />
+              <div>
+                <div className="font-medium text-white text-xs">
+                  Free Delivery
+                </div>
+                <div className="text-[11px] text-muted-foreground">
+                  Within 2-4 days
+                </div>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2">
+              <Shield className="w-4 h-4 text-primary" />
+              <div>
+                <div className="font-medium text-white text-xs">
+                  1 Year Warranty
+                </div>
+                <div className="text-[11px] text-muted-foreground">
+                  Official support
+                </div>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2">
+              <RotateCcw className="w-4 h-4 text-primary" />
+              <div>
+                <div className="font-medium text-white text-xs">
+                  Easy Returns
+                </div>
+                <div className="text-[11px] text-muted-foreground">
+                  7-day replacement
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Specs */}
+          <div className="mt-6 border-t border-white/10 pt-6 space-y-4 text-sm">
+            <h2 className="font-semibold text-white">Specifications</h2>
+            <div className="grid grid-cols-2 gap-4 text-muted-foreground">
+              <div>
+                <div className="text-xs uppercase text-white/60 mb-1">
+                  Chip
+                </div>
+                <div className="text-sm text-white flex items-center gap-1">
+                  <Check className="w-4 h-4 text-primary" />
+                  {product.specs.chip}
+                </div>
+              </div>
+              <div>
+                <div className="text-xs uppercase text-white/60 mb-1">
+                  Screen
+                </div>
+                <div className="text-sm text-white flex items-center gap-1">
+                  <Check className="w-4 h-4 text-primary" />
+                  {product.specs.screen}
+                </div>
+              </div>
+              <div>
+                <div className="text-xs uppercase text-white/60 mb-1">
+                  Storage
+                </div>
+                <div className="text-sm text-white flex items-center gap-1">
+                  <Check className="w-4 h-4 text-primary" />
+                  {product.specs.storage}
+                </div>
+              </div>
+              <div>
+                <div className="text-xs uppercase text-white/60 mb-1">
+                  Battery
+                </div>
+                <div className="text-sm text-white flex items-center gap-1">
+                  <Check className="w-4 h-4 text-primary" />
+                  {product.specs.battery}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
