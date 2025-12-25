@@ -13,11 +13,10 @@ export default function Checkout() {
   const [, setLocation] = useLocation();
   const { toast } = useToast();
   const [isProcessing, setIsProcessing] = useState(false);
-  const cartTotal = total();
-
-const shipping = cartTotal > 5000 ? 0 : 350;
-const tax = Math.floor(cartTotal * 0.18);
-const finalTotal = cartTotal + tax + shipping;
+  <div className="flex justify-between text-sm text-muted-foreground">
+  <span>Delivery</span>
+  <span className="text-green-500">₹{shipping.toLocaleString("en-IN")}</span>
+</div>
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
