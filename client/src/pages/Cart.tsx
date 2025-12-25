@@ -1,4 +1,4 @@
-import { useCart } from "@/hooks/use-cart";
+  import { useCart } from "@/hooks/use-cart";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Minus, Plus, Trash2, ArrowRight } from "lucide-react";
@@ -10,9 +10,6 @@ export default function Cart() {
   const shipping = cartTotal > 5000 ? 0 : 350;
   const tax = Math.floor(cartTotal * 0.18);
   const grandTotal = cartTotal + shipping + tax;
-
-  const shipping = cartTotal > 5000 ? 0 : 350;
-  const grandTotal = cartTotal + shipping;
 
   if (items.length === 0) {
     return (
