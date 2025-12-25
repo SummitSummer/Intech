@@ -39,15 +39,12 @@ export default function ProductDetails() {
     );
   }
 
-  const hasImages = Array.isArray(product.images) && product.images.length > 0;
-  const mainImage = hasImages ? product.images[activeImage] : "";
-
   const handleAddToCart = () => {
     addItem({
       id: product.id,
       name: product.name,
       price: product.price,
-      image: hasImages ? product.images[0] : "",
+      image: product.images[0],
       quantity: 1,
     });
 
@@ -62,7 +59,7 @@ export default function ProductDetails() {
       id: product.id,
       name: product.name,
       price: product.price,
-      image: hasImages ? product.images[0] : "",
+      image: product.images[0],
       quantity: 1,
     });
 
@@ -75,40 +72,32 @@ export default function ProductDetails() {
         {/* Left: Images */}
         <div className="space-y-4">
           <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-muted">
-            {mainImage ? (
-              <img
-                src={mainImage}
-                alt={product.name}
-                className="w-full h-full object-cover"
-              />
-            ) : (
-              <div className="w-full h-full flex items-center justify-center text-muted-foreground text-sm">
-                No image available
-              </div>
-            )}
+            <img
+              src={product.images[activeImage]}
+              alt={product.name}
+              className="w-full h-full object-cover"
+            />
           </div>
 
-          {hasImages && (
-            <div className="flex gap-3">
-              {product.images.map((img: string, index: number) => (
-                <button
-                  key={index}
-                  onClick={() => setActiveImage(index)}
-                  className={`aspect-square w-20 rounded-xl overflow-hidden border ${
-                    activeImage === index
-                      ? "border-primary"
-                      : "border-white/10 hover:border-white/30"
-                  }`}
-                >
-                  <img
-                    src={img}
-                    alt={`${product.name} ${index + 1}`}
-                    className="w-full h-full object-cover"
-                  />
-                </button>
-              ))}
-            </div>
-          )}
+          <div className="flex gap-3">
+            {product.images.map((img: string, index: number) => (
+              <button
+                key={index}
+                onClick={() => setActiveImage(index)}
+                className={`aspect-square w-20 rounded-xl overflow-hidden border ${
+                  activeImage === index
+                    ? "border-primary"
+                    : "border-white/10 hover:border-white/30"
+                }`}
+              >
+                <img
+                  src={img}
+                  alt={`${product.name} ${index + 1}`}
+                  className="w-full h-full object-cover"
+                />
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Right: Details */}
