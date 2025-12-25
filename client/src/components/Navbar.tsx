@@ -31,8 +31,8 @@ export function Navbar() {
   };
 
   const handleNavClick = (href: string) => {
-  console.log("Клик по навигации, href:", href); // ← эту строку добавь
-  setLocation(href);
+  console.log("Клик по навигации, href:", href);
+  window.location.href = href;  // ← ЭТА строка вместо setLocation(href)
   setIsMenuOpen(false);
 };
 
