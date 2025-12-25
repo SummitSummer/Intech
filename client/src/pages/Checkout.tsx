@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
-import { ShieldCheck, CreditCard, Banknote } from "lucide-react";
+import { ShieldCheck, Banknote } from "lucide-react";
 
 export default function Checkout() {
   const { total, clearCart } = useCart();
@@ -15,7 +15,7 @@ export default function Checkout() {
   const [isProcessing, setIsProcessing] = useState(false);
 
   const cartTotal = total();
-  const shipping = cartTotal > 5000 ? 0 : 350;          // ← условие доставки
+  const shipping = cartTotal > 5000 ? 0 : 350;
   const tax = Math.floor(cartTotal * 0.18);
   const finalTotal = cartTotal + shipping + tax;
 
@@ -52,13 +52,15 @@ export default function Checkout() {
           <div className="md:col-span-2 space-y-8">
             <div className="bg-card border border-white/5 rounded-xl p-6">
               <h2 className="font-semibold text-white mb-4">
-                Contact Information
+                Contact & Shipping Details
               </h2>
+
               <form
                 id="checkout-form"
                 onSubmit={handleSubmit}
                 className="space-y-6"
               >
+                {/* Name */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="firstName">First Name</Label>
@@ -70,6 +72,7 @@ export default function Checkout() {
                   </div>
                 </div>
 
+                {/* Contact */}
                 <div className="space-y-2">
                   <Label htmlFor="phone">Phone Number</Label>
                   <Input
@@ -89,34 +92,58 @@ export default function Checkout() {
                   />
                 </div>
 
+                {/* Address */}
+                <div className="space-y-2">
+                  <Label htmlFor="addressLine1">Address Line 1</Label>
+                  <Input
+                    id="addressLine1"
+                    placeholder="House / Flat / Building, Street"
+                    required
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="addressLine2">Address Line 2 (optional)</Label>
+                  <Input
+                    id="addressLine2"
+                    placeholder="Area / Locality / Landmark"
+                  />
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="city">City</Label>
+                    <Input id="city" required />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="state">State</Label>
+                    <Input id="state" required />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="zip">ZIP / PIN Code</Label>
+                    <Input
+                      id="zip"
+                      inputMode="numeric"
+                      placeholder="560001"
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="country">Country</Label>
+                    <Input id="country" defaultValue="India" required />
+                  </div>
+                </div>
+
+                {/* Payment method */}
                 <div className="space-y-2">
                   <Label>Payment Method</Label>
                   <RadioGroup
-                    defaultValue="card"
-                    className="grid grid-cols-1 md:grid-cols-2 gap-3"
+                    defaultValue="cod"
+                    className="grid grid-cols-1 gap-3"
                   >
-                    <Label
-                      htmlFor="card"
-                      className="flex items-center gap-3 border border-white/10 rounded-lg p-3 cursor-pointer hover:border-primary"
-                    >
-                      <RadioGroupItem
-                        value="card"
-                        id="card"
-                        className="mt-0.5"
-                      />
-                      <div className="flex items-center gap-2">
-                        <CreditCard className="w-4 h-4 text-primary" />
-                        <div>
-                          <div className="text-sm font-medium text-white">
-                            Card / UPI
-                          </div>
-                          <div className="text-xs text-muted-foreground">
-                            Instant digital payment
-                          </div>
-                        </div>
-                      </div>
-                    </Label>
-
                     <Label
                       htmlFor="cod"
                       className="flex items-center gap-3 border border-white/10 rounded-lg p-3 cursor-pointer hover:border-primary"
@@ -150,6 +177,7 @@ export default function Checkout() {
               <h3 className="font-bold text-white text-lg mb-4">
                 Order Summary
               </h3>
+
               <div className="space-y-2 mb-6 text-sm">
                 <div className="flex justify-between text-muted-foreground">
                   <span>Items Total</span>
