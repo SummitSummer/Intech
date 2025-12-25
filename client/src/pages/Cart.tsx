@@ -87,18 +87,20 @@ export default function Cart() {
               <div className="space-y-3 mb-6">
                 <div className="flex justify-between text-muted-foreground">
                   <span>Subtotal</span>
-                  <span>₹{cartTotal.toLocaleString('en-IN')}</span>
+                  <span>₹{cartTotal.toLocaleString("en-IN")}</span>
                 </div>
                 <div className="flex justify-between text-muted-foreground">
+                  <span>Delivery</span>
                   <span className="text-green-500">
-                  {shipping === 0 ? "Free" : `₹${shipping.toLocaleString("en-IN")}`}
+                {shipping === 0 ? "Free" : `₹${shipping.toLocaleString("en-IN")}`}
                 </span>
                 </div>
-                <div className="flex justify-between text-muted-foreground">
+                
+                  <div className="flex justify-between text-muted-foreground">
                   <span>Tax (18%)</span>
-                  <span>₹{tax.toLocaleString("en-IN")}</span>
-                </div>
+                <span>₹{tax.toLocaleString("en-IN")}</span>
               </div>
+             </div>   
               
               <div className="border-t border-white/10 pt-4 mb-8">
                 <div className="flex justify-between items-end">
