@@ -13,11 +13,6 @@ export default function Checkout() {
   const [, setLocation] = useLocation();
   const { toast } = useToast();
   const [isProcessing, setIsProcessing] = useState(false);
-  <div className="flex justify-between text-sm text-muted-foreground">
-  <span>Delivery</span>
-  <span className="text-green-500">₹{shipping.toLocaleString("en-IN")}</span>
-</div>
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsProcessing(true);
