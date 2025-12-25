@@ -13,6 +13,9 @@ export default function Checkout() {
   const [, setLocation] = useLocation();
   const { toast } = useToast();
   const [isProcessing, setIsProcessing] = useState(false);
+  const cartTotal = total();
+  const finalTotal = Math.floor(cartTotal * 1.18);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsProcessing(true);
@@ -98,21 +101,23 @@ export default function Checkout() {
               <h3 className="font-bold text-white text-lg mb-4">Order Summary</h3>
               <div className="space-y-2 mb-6 text-sm">
                  <div className="flex justify-between text-muted-foreground">
-              <span>Items Total</span>
-            <span>₹{cartTotal.toLocaleString("en-IN")}</span>
-           </div>
+                  <span>Items Total</span>
+                  <span>₹{cartTotal.toLocaleString('en-IN')}</span>
+                </div>
+                <div className="flex justify-between text-muted-foreground">
+                  <span>Tax (18%)</span>
+                  <span>₹{Math.floor(cartTotal * 0.18).toLocaleString('en-IN')}</span>
+                </div>
+                <div className="flex justify-between text-muted-foreground">
+                  <span>Delivery</span>
+                  <span className="text-green-500">Free</span>
+                </div>
+                <div className="border-t border-white/10 pt-2 mt-2 flex justify-between font-bold text-white text-base">
+                  <span>Total Amount</span>
+                  <span className="text-primary">₹{finalTotal.toLocaleString('en-IN')}</span>
+                </div>
+              </div>
 
-<div className="flex justify-between text-muted-foreground">
-  <span>Tax (18%)</span>
-<span>₹{tax.toLocaleString("en-IN")}</span>
-</div>
-
-<div className="flex justify-between text-sm text-muted-foreground">
-  <span>Delivery</span>
-  <span className="text-green-500">
-    {shipping === 0 ? "Free" : `₹${shipping.toLocaleString("en-IN")}`}
-  </span>
-</div>
               <Button 
                 type="submit" 
                 form="checkout-form"
