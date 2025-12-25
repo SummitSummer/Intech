@@ -276,7 +276,7 @@ tsx
       </div>
     </div>
   </div>
-</footer>
+      <footer> ... весь наш футер ... </footer>
     </div>
   );
 }
