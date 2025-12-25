@@ -103,14 +103,14 @@ export default function Checkout() {
               <h3 className="font-bold text-white text-lg mb-4">Order Summary</h3>
               <div className="space-y-2 mb-6 text-sm">
                  <div className="flex justify-between text-muted-foreground">
-  <span>Items Total</span>
-  <span>₹{cartTotal.toLocaleString("en-IN")}</span>
-</div>
+              <span>Items Total</span>
+            <span>₹{cartTotal.toLocaleString("en-IN")}</span>
+           </div>
 
 <div className="flex justify-between text-muted-foreground">
   <span>Tax (18%)</span>
-  <span>₹{tax.toLocaleString("en-IN")}</span>
-</div>>
+<span>₹{tax.toLocaleString("en-IN")}</span>
+</div>
 
 <div className="flex justify-between text-sm text-muted-foreground">
   <span>Delivery</span>
