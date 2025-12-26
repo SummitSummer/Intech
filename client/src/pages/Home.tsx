@@ -154,7 +154,7 @@ export default function Home() {
         </div>
       </section>
 
-      Полный JSX футера, который можно вставить в Home.tsx вместо текущего <footer>...</footer>, вот такой.
+    
 ​
 
 tsx
