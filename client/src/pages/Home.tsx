@@ -156,8 +156,6 @@ export default function Home() {
 
     
 ​
-
-tsx
 <footer className="border-t border-neutral-800 bg-black/40">
   <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
     <div className="grid grid-cols-1 gap-10 md:grid-cols-4">
