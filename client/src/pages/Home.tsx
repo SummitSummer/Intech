@@ -154,20 +154,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-    В твоём Home-1.tsx нужно тронуть только подвал и заменить там <a> на Link с относительными путями.
+      Полный JSX футера, который можно вставить в Home.tsx вместо текущего <footer>...</footer>, вот такой.
 ​
 
-Ниже готовый кусок футера, который можешь просто вставить вместо своего текущего <footer> в Home-1.tsx:
-
 tsx
-<footer className="bg-[#05070D] border-t border-[#1A1F2E] mt-20">
-  <div className="max-w-6xl mx-auto px-4 py-10 sm:px-6 lg:px-8">
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+<footer className="border-t border-neutral-800 bg-black/40">
+  <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
+    <div className="grid grid-cols-1 gap-10 md:grid-cols-4">
       {/* Brand */}
       <div>
-        <h3 className="text-lg font-semibold tracking-[0.25em]">INTECH</h3>
-        <p className="mt-3 text-sm text-neutral-400 max-w-xs">
+        <h3 className="text-lg font-semibold tracking-[0.25em]">
+          INTECH
+        </h3>
+        <p className="mt-3 max-w-xs text-sm text-neutral-400">
           Your premier destination for high-end electronics and gadgets.
           Bringing the future of technology to your doorstep.
         </p>
@@ -180,7 +179,7 @@ tsx
           <li>
             <Link
               href="/catalog?category=Smartphones"
-              className="hover:text-white transition"
+              className="transition hover:text-white"
             >
               Smartphones
             </Link>
@@ -188,7 +187,7 @@ tsx
           <li>
             <Link
               href="/catalog?category=Laptops"
-              className="hover:text-white transition"
+              className="transition hover:text-white"
             >
               Laptops
             </Link>
@@ -196,7 +195,7 @@ tsx
           <li>
             <Link
               href="/catalog?category=Audio"
-              className="hover:text-white transition"
+              className="transition hover:text-white"
             >
               Audio
             </Link>
@@ -204,7 +203,7 @@ tsx
           <li>
             <Link
               href="/catalog?category=Accessories"
-              className="hover:text-white transition"
+              className="transition hover:text-white"
             >
               Accessories
             </Link>
@@ -212,42 +211,38 @@ tsx
         </ul>
       </div>
 
-      {/* Support */}
+      {/* Support (без редиректов) */}
       <div>
         <h4 className="text-sm font-semibold text-neutral-200">Support</h4>
         <ul className="mt-3 space-y-2 text-sm text-neutral-400">
           <li>
-            <Link href="/support/contact" className="hover:text-white transition">
+            <span className="transition">
               Contact Us
-            </Link>
+            </span>
           </li>
           <li>
-            <Link href="/support/faqs" className="hover:text-white transition">
+            <span className="transition">
               FAQs
-            </Link>
+            </span>
           </li>
           <li>
-            <Link
-              href="/support/shipping-returns"
-              className="hover:text-white transition"
-            >
+            <span className="transition">
               Shipping &amp; Returns
-            </Link>
+            </span>
           </li>
           <li>
-            <Link
-              href="/support/warranty"
-              className="hover:text-white transition"
-            >
+            <span className="transition">
               Warranty Policy
-            </Link>
+            </span>
           </li>
         </ul>
       </div>
 
       {/* Newsletter */}
       <div>
-        <h4 className="text-sm font-semibold text-neutral-200">Newsletter</h4>
+        <h4 className="text-sm font-semibold text-neutral-200">
+          Newsletter
+        </h4>
         <p className="mt-3 text-sm text-neutral-400">
           Subscribe for latest updates and offers.
         </p>
@@ -255,28 +250,31 @@ tsx
           <input
             type="email"
             placeholder="Enter your email"
-            className="flex-1 rounded-md bg-neutral-900 border border-neutral-700 px-3 py-2 text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="flex-1 rounded-md border border-neutral-700 bg-neutral-900 px-3 py-2 text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-          <Button type="submit" className="bg-blue-600 hover:bg-blue-500">
+          <Button
+            type="submit"
+            className="bg-blue-600 hover:bg-blue-500"
+          >
             Subscribe
           </Button>
         </form>
       </div>
     </div>
 
-    <div className="mt-10 border-t border-neutral-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
+    <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-neutral-800 pt-6 text-xs text-neutral-500 sm:flex-row">
       <p>© 2024 Intech Electronics. All rights reserved.</p>
       <div className="flex gap-4">
-        <Link href="/privacy" className="hover:text-white transition">
+        <Link href="/privacy" className="transition hover:text-white">
           Privacy Policy
         </Link>
-        <Link href="/terms" className="hover:text-white transition">
+        <Link href="/terms" className="transition hover:text-white">
           Terms of Service
         </Link>
       </div>
     </div>
   </div>
-      <footer> ... весь наш футер ... </footer>
+</footer>
     </div>
   );
 }
