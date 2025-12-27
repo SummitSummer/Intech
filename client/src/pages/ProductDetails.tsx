@@ -213,17 +213,6 @@ export default function ProductDetails() {
                   </p>
                     </div>
                   )}
-                {product.specs.screen && (
-                  <div>
-                    <div className="text-xs uppercase text-white/60 mb-1">
-                      Screen
-                    </div>
-                    <div className="text-sm text-white flex items-center gap-1">
-                      <Check className="w-4 h-4 text-primary" />
-                      {product.specs.screen}
-                    </div>
-                  </div>
-                )}
                 {product.specs.storage && (
                   <div>
                     <div className="text-xs uppercase text-white/60 mb-1">
