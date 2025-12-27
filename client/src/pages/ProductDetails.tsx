@@ -203,15 +203,56 @@ export default function ProductDetails() {
               </div>
             </div>
           </div>
+
           {/* Specs */}
-          {product.specifications && (
+          {product.specs && (
             <div className="mt-6 border-t border-white/10 pt-6 space-y-4 text-sm">
               <h2 className="font-semibold text-white">Specifications</h2>
-              <p className="text-muted-foreground whitespace-pre-line">
-                {product.specifications}
-                  </p>
+              <div className="grid grid-cols-2 gap-4 text-muted-foreground">
+                {product.specs.chip && (
+                  <div>
+                    <div className="text-xs uppercase text-white/60 mb-1">
+                      Chip
                     </div>
-                  )}
+                    <div className="text-sm text-white flex items-center gap-1">
+                      <Check className="w-4 h-4 text-primary" />
+                      {product.specs.chip}
+                    </div>
+                  </div>
+                )}
+                {product.specs.screen && (
+                  <div>
+                    <div className="text-xs uppercase text-white/60 mb-1">
+                      Screen
+                    </div>
+                    <div className="text-sm text-white flex items-center gap-1">
+                      <Check className="w-4 h-4 text-primary" />
+                      {product.specs.screen}
+                    </div>
+                  </div>
+                )}
+                {product.specs.storage && (
+                  <div>
+                    <div className="text-xs uppercase text-white/60 mb-1">
+                      Storage
+                    </div>
+                    <div className="text-sm text-white flex items-center gap-1">
+                      <Check className="w-4 h-4 text-primary" />
+                      {product.specs.storage}
+                    </div>
+                  </div>
+                )}
+                {product.specs.battery && (
+                  <div>
+                    <div className="text-xs uppercase text-white/60 mb-1">
+                      Battery
+                    </div>
+                    <div className="text-sm text-white flex items-center gap-1">
+                      <Check className="w-4 h-4 text-primary" />
+                      {product.specs.battery}
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           )}
