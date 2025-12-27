@@ -214,26 +214,6 @@ export default function ProductDetails() {
                     </div>
                   )}
                 {product.specs.storage && (
-                  <div>
-                    <div className="text-xs uppercase text-white/60 mb-1">
-                      Storage
-                    </div>
-                    <div className="text-sm text-white flex items-center gap-1">
-                      <Check className="w-4 h-4 text-primary" />
-                      {product.specs.storage}
-                    </div>
-                  </div>
-                )}
-                {product.specs.battery && (
-                  <div>
-                    <div className="text-xs uppercase text-white/60 mb-1">
-                      Battery
-                    </div>
-                    <div className="text-sm text-white flex items-center gap-1">
-                      <Check className="w-4 h-4 text-primary" />
-                      {product.specs.battery}
-                    </div>
-                  </div>
                 )}
               </div>
             </div>
