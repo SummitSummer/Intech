@@ -203,7 +203,6 @@ export default function ProductDetails() {
               </div>
             </div>
           </div>
-          )}
           {/* Specs */}
           {product.specifications && (
             <div className="mt-6 border-t border-white/10 pt-6 space-y-4 text-sm">
@@ -213,8 +212,6 @@ export default function ProductDetails() {
                   </p>
                     </div>
                   )}
-                {product.specs.storage && (
-                )}
               </div>
             </div>
           )}
