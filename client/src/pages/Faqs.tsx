@@ -16,11 +16,7 @@ export default function Faqs() {
     },
     {
       question: "What payment methods do you accept?",
-      answer: "We accept UPI (Google Pay, PhonePe, Paytm), Credit/Debit Cards (Visa, Mastercard, RuPay), Net Banking, Wallets, and Cash on Delivery (COD) for orders under ₹50,000."
-    },
-    {
-      question: "Is GST included in product prices?",
-      answer: "Yes, all prices are inclusive of 18% GST. GST invoice will be provided with every order as per Indian tax regulations."
+      answer: "We accept UPI (Google Pay, PhonePe, Paytm), Credit/Debit Cards (Visa, Mastercard, RuPay), Net Banking, Wallets, and Cash on Delivery (COD) for orders under Rs. 50,000."
     },
     {
       question: "How can I track my order?",
@@ -39,7 +35,7 @@ export default function Faqs() {
   return (
     <div className="space-y-8 max-w-3xl">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Frequently Asked Questions</h1>
+        <h1 className="text-3xl font-bold tracking-tight text-foreground">Frequently Asked Questions</h1>
         <p className="text-muted-foreground mt-2">
           Find answers to common questions about orders, shipping, payments, and returns in India.
         </p>
