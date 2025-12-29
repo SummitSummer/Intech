@@ -1,3 +1,4 @@
+import React from "react";  // ← КЛЮЧЕВОЙ ИМПОРТ!
 import { Link, useLocation } from "wouter";
 import { ChevronLeft } from "lucide-react";
 
@@ -10,7 +11,7 @@ const supportPages = [
   { path: "/terms", name: "Terms of Service" },
 ];
 
-export default function SupportLayout({ children }) {
+export default function SupportLayout({ children }: { children: React.ReactNode }) {
   const [location] = useLocation();
 
   return (
@@ -25,9 +26,8 @@ export default function SupportLayout({ children }) {
         </div>
       </div>
 
-      {/* Main content + Sidebar */}
+      {/* Sidebar + Content */}
       <div className="flex-grow flex max-w-6xl mx-auto px-6 py-8 gap-8">
-        {/* Sidebar - только на support страницах */}
         <nav className="w-64 flex-shrink-0 hidden md:block">
           <h3 className="font-semibold text-lg mb-6 text-foreground">Support</h3>
           <ul className="space-y-2">
@@ -46,16 +46,13 @@ export default function SupportLayout({ children }) {
             ))}
           </ul>
         </nav>
-
-        {/* Content */}
         <main className="flex-1 min-w-0">{children}</main>
       </div>
 
       {/* Footer */}
-      <footer className="border-t border-neutral-800 bg-black40">
-        {/* Весь footer код из Home.tsx копия */}
+      <footer className="border-t border-neutral-800 bg-black/40">
         <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
-          {/* ... footer content ... */}
+          {/* Ваш footer контент */}
         </div>
       </footer>
     </div>
