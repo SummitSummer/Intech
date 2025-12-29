@@ -1,18 +1,25 @@
-ContactUs.tsx
-import { Link } from "wouter";
-
-export default function ContactUs() {
-  return (
-    <div className="min-h-screen bg-zinc-900 text-zinc-100">
-      <div className="max-w-4xl mx-auto px-6 py-8">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold mb-2">Contact Us</h1>
-          <p className="text-zinc-400">Get in touch with our team</p>
-        </div>
-
-        {/* Добавьте ваш контент здесь */}
-
-      </div>
-    </div>
-  );
-}
+<div className="space-y-6">
+  <div>
+    <h3 className="font-semibold mb-2">Registered Office</h3>
+    <p className="text-muted-foreground text-sm">
+      123 MG Road, Indiranagar<br />
+      Bangalore, Karnataka 560038<br />
+      India
+    </p>
+  </div>
+  <div>
+    <h3 className="font-semibold mb-2">Customer Support Email</h3>
+    <p className="text-muted-foreground">Support@intch.com</p>
+  </div>
+  <div>
+    <h3 className="font-semibold mb-2">Phone</h3>
+    <p className="text-muted-foreground">+91 7432 7431</p>
+  </div>
+  <div>
+    <h3 className="font-semibold mb-2">Business Hours</h3>
+    <p className="text-muted-foreground">
+      Monday - Saturday: 9:00 AM - 7:00 PM IST<br />
+      Sunday: Closed
+    </p>
+  </div>
+</div>
