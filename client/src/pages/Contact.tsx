@@ -26,14 +26,6 @@ export default function Contact() {
         
         <div className="space-y-6">
           <div>
-            <h3 className="font-semibold mb-2">Registered Office</h3>
-            <p className="text-muted-foreground text-sm">
-              123 MG Road, Indiranagar<br />
-              Bangalore, Karnataka 560038<br />
-              India
-            </p>
-          </div>
-          <div>
             <h3 className="font-semibold mb-2">Customer Support</h3>
             <p className="text-muted-foreground">Support@intch.com</p>
           </div>
