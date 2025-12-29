@@ -1,9 +1,10 @@
-import { Switch, Route } from "wouter";
+import { Switch, Route, useLocation } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Navbar } from "@/components/Navbar";
+import {SupportLayout} from "@/components/SupportLayout";
 
 // Pages
 import Home from "@/pages/Home";
@@ -22,6 +23,24 @@ import Privacy from "@/pages/Privacy";
 import Terms from "@/pages/Terms";
 
 function Router() {
+  const [location] = useLocation();
+  const isSupportPage = ["/contact", "/faqs", "/shipping-returns", "/warranty", "/privacy", "/terms"].includes(location);
+
+  if (isSupportPage) {
+    return (
+      <SupportLayout>
+        <Switch>
+          <Route path="/contact" component={Contact} />
+          <Route path="/faqs" component={Faqs} />
+          <Route path="/shipping-returns" component={ShippingReturns} />
+          <Route path="/warranty" component={Warranty} />
+          <Route path="/privacy" component={Privacy} />
+          <Route path="/terms" component={Terms} />
+        </Switch>
+      </SupportLayout>
+    );
+  }
+
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
@@ -33,13 +52,6 @@ function Router() {
           <Route path="/cart" component={Cart} />
           <Route path="/checkout" component={Checkout} />
           <Route path="/auth" component={Auth} />
-          {/* Footer pages */}
-      <Route path="/contact" component={Contact} />
-      <Route path="/faqs" component={Faqs} />
-      <Route path="/shipping-returns" component={ShippingReturns} />
-      <Route path="/warranty" component={Warranty} />
-      <Route path="/privacy" component={Privacy} />
-      <Route path="/terms" component={Terms} />
           <Route component={NotFound} />
         </Switch>
       </main>
