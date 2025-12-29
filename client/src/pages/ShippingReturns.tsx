@@ -24,9 +24,9 @@ export default function ShippingReturns() {
             <div>
               <h3 className="font-semibold text-foreground mb-2">Shipping Charges</h3>
               <ul className="space-y-1 text-muted-foreground text-sm">
-                <li>FREE on orders above Rs. 999</li>
-                <li>Rs. 99 for orders below Rs. 999</li>
-                <li>Express: Rs. 199 (1-2 days metro)</li>
+                <li>FREE on orders above 999</li>
+                <li>99 for orders below 999</li>
+                <li>Express: 199 (1-2 days metro)</li>
               </ul>
             </div>
             
@@ -97,7 +97,7 @@ export default function ShippingReturns() {
             <h3 className="font-semibold text-foreground mb-3 text-lg">Shipping Summary</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>Pan India delivery</li>
-              <li>Free shipping > Rs. 999</li>
+              <li>Free shipping above 999</li>
               <li>Track via SMS/Email</li>
             </ul>
           </div>
