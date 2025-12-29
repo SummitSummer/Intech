@@ -9,7 +9,7 @@ export default function TermsOfService() {
           <p className="text-zinc-400">Terms and conditions</p>
         </div>
 
-        {/* Добавьте ваш контент здесь */}
+        {1323}
 
       </div>
     </div>
