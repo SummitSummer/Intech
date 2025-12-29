@@ -4,7 +4,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Navbar } from "@/components/Navbar";
-import {SupportLayout} from "@/components/SupportLayout";
+import { SupportLayout } from "@/components/SupportLayout";
 
 // Pages
 import Home from "@/pages/Home";
@@ -14,6 +14,7 @@ import Cart from "@/pages/Cart";
 import Checkout from "@/pages/Checkout";
 import Auth from "@/pages/Auth";
 import NotFound from "@/pages/not-found";
+
 // Footer pages
 import Contact from "@/pages/Contact";
 import Faqs from "@/pages/Faqs";
@@ -41,6 +42,7 @@ function Router() {
     );
   }
 
+  // ❌ ЭТОГО НЕ ХВАЛО!
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
@@ -70,5 +72,4 @@ function App() {
   );
 }
 
-export default SupportLayout;  // ← ЭТА СТРОКА В КОНЦЕ ФАЙЛА!
-
+export default App;
