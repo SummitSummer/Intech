@@ -10,22 +10,10 @@ export default function Home() {
   const { mutate: seed, isPending: isSeeding } = useSeedProducts();
 
 const categories = [
-  { 
-    name: 'Smartphones', 
-    image: '/images/smartphones.jpg'  // https://s5.stc.all.kpcdn.net/...shutterstock_1736005427-960x540.jpg
-  },
-  { 
-    name: 'Laptops', 
-    image: '/images/laptops.jpg'  // https://i.rtings.com/...best-laptops-for-working-from-home-20250522-medium.jpg
-  },
-  { 
-    name: 'Audio', 
-    image: '/images/audio.jpg'  // https://cdn.thewirecutter.com/...BEST-WIRELESS-WIRED-HEADSETS-8962.jpg
-  },
-  { 
-    name: 'Accessories', 
-    image: '/images/accessories.jpg'  // https://www.xcom-shop.ru/...1.jpg
-  },
+  { name: 'Smartphones', image: 'https://s5.stc.all.kpcdn.net/expert/wp-content/uploads/2021/08/shutterstock_1736005427-960x540.jpg' },
+  { name: 'Laptops', image: 'https://i.rtings.com/assets/pages/KSgFV72t/best-laptops-for-working-from-home-20250522-medium.jpg' },
+  { name: 'Audio', image: 'https://cdn.thewirecutter.com/wp-content/media/2025/09/BEST-WIRELESS-WIRED-HEADSETS-8962.jpg' },
+  { name: 'Accessories', image: 'https://www.xcom-shop.ru/upload/medialibrary/17e/hh2w6g7lq4k1y341aortxg90tz6jh1vs/1.jpg' },
 ];
 
 
