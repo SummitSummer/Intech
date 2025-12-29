@@ -9,12 +9,25 @@ export default function Home() {
   const { data: products, isLoading } = useProducts({ sort: 'popular' });
   const { mutate: seed, isPending: isSeeding } = useSeedProducts();
 
-  const categories = [
-    { name: "Smartphones", image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=500&q=80" },
-    { name: "Laptops", image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=500&q=80" },
-    { name: "Audio", image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=80" },
-    { name: "Accessories", image: "https://img3.akspic.ru/crops/8/2/4/6/3/136428/136428-ustrojstvo_vvoda-igrovaya_konsol-prisposoblenie-gadzhet-videoigra-1920x1080.jpg" },
-  ];
+const categories = [
+  { 
+    name: 'Smartphones', 
+    image: '/images/smartphones.jpg'  // https://s5.stc.all.kpcdn.net/...shutterstock_1736005427-960x540.jpg
+  },
+  { 
+    name: 'Laptops', 
+    image: '/images/laptops.jpg'  // https://i.rtings.com/...best-laptops-for-working-from-home-20250522-medium.jpg
+  },
+  { 
+    name: 'Audio', 
+    image: '/images/audio.jpg'  // https://cdn.thewirecutter.com/...BEST-WIRELESS-WIRED-HEADSETS-8962.jpg
+  },
+  { 
+    name: 'Accessories', 
+    image: '/images/accessories.jpg'  // https://www.xcom-shop.ru/...1.jpg
+  },
+];
+
 
   return (
     <div className="min-h-screen">
