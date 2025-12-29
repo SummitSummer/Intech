@@ -14,12 +14,12 @@ import Checkout from "@/pages/Checkout";
 import Auth from "@/pages/Auth";
 import NotFound from "@/pages/not-found";
 // Footer pages
-import ContactUs from "@/pages/ContactUs";
-import FAQs from "@/pages/FAQs";
+import Contact from "@/pages/Contact";
+import Faqs from "@/pages/Faqs";
 import ShippingReturns from "@/pages/ShippingReturns";
-import WarrantyPolicy from "@/pages/WarrantyPolicy";
-import PrivacyPolicy from "@/pages/PrivacyPolicy";
-import TermsOfService from "@/pages/TermsOfService";
+import Warranty from "@/pages/Warranty";
+import Privacy from "@/pages/Privacy";
+import Terms from "@/pages/Terms";
 
 function Router() {
   return (
@@ -34,12 +34,12 @@ function Router() {
           <Route path="/checkout" component={Checkout} />
           <Route path="/auth" component={Auth} />
           {/* Footer pages */}
-      <Route path="/contact-us" component={ContactUs} />
-      <Route path="/faqs" component={FAQs} />
+      <Route path="/contact" component={Contact} />
+      <Route path="/faqs" component={Faqs} />
       <Route path="/shipping-returns" component={ShippingReturns} />
-      <Route path="/warranty-policy" component={WarrantyPolicy} />
-      <Route path="/privacy-policy" component={PrivacyPolicy} />
-      <Route path="/terms-of-service" component={TermsOfService} />
+      <Route path="/warranty" component={Warranty} />
+      <Route path="/privacy" component={Privacy} />
+      <Route path="/terms" component={Terms} />
           <Route component={NotFound} />
         </Switch>
       </main>
