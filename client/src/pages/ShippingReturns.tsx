@@ -15,18 +15,18 @@ export default function ShippingReturns() {
             <div>
               <h3 className="font-semibold text-foreground mb-2">Delivery Timeline</h3>
               <ul className="space-y-1 text-muted-foreground text-sm">
-                <li>• Metro Cities: 3-5 business days</li>
-                <li>• Tier 2 Cities: 5-7 business days</li>
-                <li>• Remote Areas: 7-14 business days</li>
+                <li>Metro Cities: 3-5 business days</li>
+                <li>Tier 2 Cities: 5-7 business days</li>
+                <li>Remote Areas: 7-14 business days</li>
               </ul>
             </div>
             
             <div>
               <h3 className="font-semibold text-foreground mb-2">Shipping Charges</h3>
               <ul className="space-y-1 text-muted-foreground text-sm">
-                <li>• FREE on orders above ₹999</li>
-                <li>• ₹99 for orders below ₹999</li>
-                <li>• Express: ₹199 (1-2 days metro)</li>
+                <li>FREE on orders above Rs. 999</li>
+                <li>Rs. 99 for orders below Rs. 999</li>
+                <li>Express: Rs. 199 (1-2 days metro)</li>
               </ul>
             </div>
             
@@ -52,10 +52,10 @@ export default function ShippingReturns() {
             <div>
               <h3 className="font-semibold text-foreground mb-2">Return Eligibility</h3>
               <ul className="space-y-1 text-muted-foreground text-sm">
-                <li>• 7 days: Damaged/Defective (CPA 2019)</li>
-                <li>• 30 days: Size/Fit issues</li>
-                <li>• Product unused + original tags</li>
-                <li>• Original packaging required</li>
+                <li>7 days: Damaged/Defective (CPA 2019)</li>
+                <li>30 days: Size/Fit issues</li>
+                <li>Product unused + original tags</li>
+                <li>Original packaging required</li>
               </ul>
             </div>
             
@@ -72,9 +72,9 @@ export default function ShippingReturns() {
             <div>
               <h3 className="font-semibold text-foreground mb-2">Refund Methods</h3>
               <ul className="space-y-1 text-muted-foreground text-sm">
-                <li>• Original payment (UPI/Card)</li>
-                <li>• Bank transfer (COD orders)</li>
-                <li>• Instant store credit</li>
+                <li>Original payment (UPI/Card)</li>
+                <li>Bank transfer (COD orders)</li>
+                <li>Instant store credit</li>
               </ul>
             </div>
           </div>
@@ -82,10 +82,10 @@ export default function ShippingReturns() {
           <div className="bg-destructive/10 p-4 rounded-lg border border-destructive/20">
             <h3 className="font-semibold text-foreground mb-2">Non-Returnable Items</h3>
             <ul className="space-y-1 text-muted-foreground text-sm">
-              <li>• Opened electronics</li>
-              <li>• Personal care products</li>
-              <li>• Intimate wear</li>
-              <li>• Perishables</li>
+              <li>Opened electronics</li>
+              <li>Personal care products</li>
+              <li>Intimate wear</li>
+              <li>Perishables</li>
             </ul>
           </div>
         </div>
@@ -96,18 +96,18 @@ export default function ShippingReturns() {
           <div className="bg-primary/10 p-6 rounded-lg">
             <h3 className="font-semibold text-foreground mb-3 text-lg">Shipping Summary</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>• Pan India delivery</li>
-              <li>• Free shipping > ₹999</li>
-              <li>• Track via SMS/Email</li>
+              <li>Pan India delivery</li>
+              <li>Free shipping > Rs. 999</li>
+              <li>Track via SMS/Email</li>
             </ul>
           </div>
           
           <div className="bg-muted/50 p-6 rounded-lg">
             <h3 className="font-semibold text-foreground mb-3 text-lg">Returns Summary</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>• 7-30 days return window</li>
-              <li>• Free pickup</li>
-              <li>• 7-10 days refund</li>
+              <li>7-30 days return window</li>
+              <li>Free pickup</li>
+              <li>7-10 days refund</li>
             </ul>
           </div>
         </div>
