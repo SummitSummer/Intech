@@ -70,4 +70,5 @@ function App() {
   );
 }
 
-export default App;
+export default SupportLayout;  // ← ЭТА СТРОКА В КОНЦЕ ФАЙЛА!
+
