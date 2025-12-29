@@ -209,32 +209,15 @@ export default function Home() {
         </ul>
       </div>
 
-      {/* Support (без редиректов) */}
-      <div>
-        <h4 className="text-sm font-semibold text-neutral-200">Support</h4>
-        <ul className="mt-3 space-y-2 text-sm text-neutral-400">
-          <li>
-            <span className="transition">
-              Contact Us
-            </span>
-          </li>
-          <li>
-            <span className="transition">
-              FAQs
-            </span>
-          </li>
-          <li>
-            <span className="transition">
-              Shipping &amp; Returns
-            </span>
-          </li>
-          <li>
-            <span className="transition">
-              Warranty Policy
-            </span>
-          </li>
-        </ul>
-      </div>
+<div> {/* Support */}
+  <h4 className="text-sm font-semibold text-neutral-200">Support</h4>
+  <ul className="mt-3 space-y-2 text-sm text-neutral-400">
+    <li><Link to="/contact" className="transition hover:text-white block">Contact Us</Link></li>
+    <li><Link to="/faqs" className="transition hover:text-white block">FAQs</Link></li>
+    <li><Link to="/shipping-returns" className="transition hover:text-white block">Shipping & Returns</Link></li>
+    <li><Link to="/warranty" className="transition hover:text-white block">Warranty Policy</Link></li>
+  </ul>
+</div>
 
       {/* Newsletter */}
       <div>
